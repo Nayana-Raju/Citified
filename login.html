@@ -1,0 +1,33 @@
+{% extends 'common_base1.html' %}
+{% block content %}
+
+<div class="banner-btm">
+    <div class="container">
+        <div class="banner-bottom-main">
+            <div class="col-md-4 banner-btmg1">
+                <center><h1 style="color:red"><b>{{msg}}<b></h1></center>
+                <form method="POST">
+    {% csrf_token %}
+    <table class="table">
+       
+     
+        <tr>
+              <td style="color: white;">USERNAME</td><td><input type="text" name="uname" pattern="[a-zA-Z0-9\s]{1,32}" required></td>
+        </tr>
+        <tr>
+              <td style="color: white;">PASSWORD</td><td><input type="password" name="pwd" required></td>
+        </tr>
+        <tr>
+           <td><input type="submit" name="login"  value="login"></td>
+        </tr>
+    </table>
+    <script>
+       /* function disp()
+        {
+            alert(" LOGIN SUCCESSFULL")
+        }*/
+    </script>
+</form>   
+</div>
+
+{% endblock %}
