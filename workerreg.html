@@ -1,0 +1,89 @@
+{% extends 'common_base1.html' %}
+{% block content %}
+
+
+<div class="banner-btm">
+    <div class="container">
+        <div class="banner-bottom-main">
+            <div class="col-md-4 banner-btmg1">
+
+<form action="#" method="post" class="banner_form" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table class="table">
+            <center><h1 style="color:yellow;"><b>{{msg}}</b></h1></center>
+
+        
+        <tr>
+              <td style="color: white;">NAME</td>
+            <td><input type="text" name="wname" pattern="[a-zA-Z\s]{1,32}" required=""></td>
+        </tr>
+        <tr>
+              <td style="color: white;">ADDRESS</td>
+            <td><textarea rows="5" cols="50" name="address" pattern="[a-zA-Z0-9]{1,200}" required=""></textarea></td>
+        </tr>
+        <tr>
+              <td style="color: white;">DATE OF BIRTH</td>
+            <td><input type="date" name="dob" min="0000-00-00" max="2015-12-31" required=""></td>
+        </tr>
+        <tr>
+              <td style="color: white;">GENDER</td>
+             <td style="color: white;">Male<input type="radio" name="gender" value="Male">
+            Female<input type="radio" name="gender" value="Female"></td>
+        </tr>
+        <tr>
+              <td style="color: white;">PHONE NUMBER</td>
+            <td><input type="text" name="phn" pattern="[6-9]{1}[0-9]{9}" required=""></td>
+        </tr>
+        <tr>
+              <td style="color: white;">E-MAIL</td>
+            <td><input type="email" name="email"  required=""></td>
+        </tr>
+        <tr>
+            <td style="color: white;">UNAME</td>
+          <td><input type="text" name="uname" pattern="[a-zA-Z0-9\s]{1,32}" required=""></td>
+      </tr>
+        <tr>
+              <td style="color: white;">PASSWORD</td>
+            <td><input type="password" name="pwd" required=""></td>
+        </tr>
+        <tr>
+              <td style="color: white;">CONFIRM PASSWORD</td>
+            <td><input type="password" name="comfirmpwd" required=""></td>
+        </tr>
+        <tr>
+            <td style="color: white;">Category</td>
+          <td><select name="category" required="">
+              <option>Select</option>
+              {%for cat in cc %}
+              <option values="{{cat.0}}" >{{cat.1}}</option>
+              {%endfor%}
+          </select></td>
+      </tr>
+
+        <tr>
+              <td style="color: white;">EXPERIENCE</td>
+            <td><input type="text" name="experience" min="0" max="5" required=""></td>
+        </tr>
+        <tr>
+            <td style="color: white;">Display Picture</td>
+          <td><input type="file" name="wimg" id="wimg" required=""></td>
+      </tr>
+      <tr>
+              
+        <td style="color: white;">what is your favourite place?</td><td><input type="text" name="question" pattern="[a-zA-Z]{0,20}" required=""></td>
+    </tr>
+        <tr>
+           <td><input type="submit" name="submit"  value="submit"></td>
+        </tr>
+    </table>
+    <!----<script>
+        function disp()
+        {
+            alert(" REGISTRATION SUCCESSFULL")
+        }
+    </script>-->
+    {{ss}}
+</form>   
+</div>
+
+{% endblock %}
