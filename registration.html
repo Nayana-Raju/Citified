@@ -1,0 +1,76 @@
+{% extends 'common_base1.html' %}
+{% block content %}
+
+
+
+<div class="banner-btm">
+    <div class="container">
+        <div class="banner-bottom-main">
+            <div class="col-md-4 banner-btmg1">
+
+               
+                <form action="#" method="post" class="banner_form" enctype="multipart/form-data">
+                    <center><h1 style="color:red"><b>{{msg}}<b></h1></center>
+                     <center><h1 style="color:red"><b>{{message}}<b></h1></center>
+    {% csrf_token %}
+    <table class="table">
+
+        
+        <tr>
+            <td style="color: white;">NAME</td>
+            <td><input type="text" name="name" pattern="[a-zA-Z\s]{1,32}" required=""></td>
+        </tr>
+        <tr>
+            <td style="color: white;">USER NAME</td>
+            <td><input type="text" name="uname" pattern="[a-zA-Z0-9\s]{1,32}" required=""></td>
+        </tr>
+        <tr>
+              <td style="color: white;">ADDRESS</td>
+            <td><textarea rows="5" cols="50" name="address" pattern="[a-zA-Z0-9]{1,200}" required=""></textarea></td>
+        </tr>
+        <tr>
+              <td style="color: white;">DATE OF BIRTH</td>
+            <td><input type="date" name="dob" min="0000-00-00" max="2015-12-31" required=""></td>
+        </tr>
+        <tr>
+              <td style="color: white;">GENDER</td>
+            <td style="color: white;"> Male<input type="radio" name="gender" id="g1" value="male">
+             Female<input type="radio" name="gender" id="g2" value="female"></td>
+        </tr>
+        <tr>
+              <td style="color: white;">PHONE NUMBER</td>
+            <td><input type="text" name="phn" pattern="[6-9]{1}[0-9]{9}" required=""></td>
+        </tr>
+        <tr>
+              <td style="color: white;">E-MAIL</td>
+            <td><input type="email" name="email"  required=""></td>
+        </tr>
+        <tr>
+              <td style="color: white;">PASSWORD</td>
+            <td><input type="password" name="pwd" required=""></td>
+        </tr>
+        <tr>
+              <td style="color: white;">CONFIRM PASSWORD</td>
+            <td><input type="password" name="comfirmpwd"  required=""></td>
+        </tr>
+        <tr>
+            <td style="color: white;">DISPLAY PICTURE</td>
+          <td><input type="file" name="uphotos" id="uphoto" ></td>
+      </tr>
+      <tr>
+              
+        <td style="color: white;">what is your favourite place?</td><td><input type="text" name="question" pattern="[a-zA-Z]{0,20}" required=""></td>
+    </tr>
+        <tr>
+           <td><input type="submit" name="submit"  value="submit"></td>
+        </tr>
+    </table>
+</form>   
+<!--</div>
+    <script>
+    function  disp()
+    {
+        alert(" REGISTRATION SUCCESSFULL")
+    }
+</script>-->
+{% endblock %}
